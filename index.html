@@ -19,22 +19,31 @@
 	<script>
 		$(function() {
 			$( "#accordion" ).accordion();
-
-			var data = [
-				{ image: 'images/out1.jpg' },
-				{ image: 'images/out2.jpg' },
-				{ image: 'images/out3.jpg' },
-				{ image: 'images/kitchen1.jpg' },
-				{ image: 'images/kitchen2.jpg' },
-				{ image: 'images/kitchen3.jpg' },
-				{ image: 'images/guest-bath1.jpg' },
-				{ image: 'images/guest-bath2.jpg' },
-				{ image: 'images/master1.jpg' },
-				{ image: 'images/master2.jpg' },
-				{ image: 'images/porch1.jpg' },
-				{ image: 'images/porch2.jpg' },
+			var pics = [ 
+				'out1',
+				'out2',
+				'out3',
+				'kitchen1',
+				'kitchen3',
+				'kitchen2',
+				'dining2',
+				'dining1',
+				'living1',
+				'living2',
+				'guest-bath1',
+				'guest-bath2',
+				'master1',
+				'master2',
+				'porch1',
+				'porch2',
 			];
 
+			var data = [];
+			for( var i=0; i < pics.length; i++ )
+			{
+				var pic = pics[i];
+				data.push( { image: 'images/'+pic+'.jpg', thumb: 'images/thumb/'+pic+'.jpg'} );
+			}
 			Galleria.loadTheme('javascripts/galleria/themes/classic/galleria.classic.min.js');
 			Galleria.configure({
 				transition: 'fade',
@@ -51,10 +60,12 @@
 
         <header>
           <h1>4421 Kirkwood Drive</h1>
+		  <h2>For Sale by Owner</h2>
         </header>
 
         <section id="main_content">
 		<div class="galleria" style="height:500px"> </div>
+		<br>
 
 		<div id="blurb">
 			Come check out this adorable pinterest-inspired 3 bed, 2 bath house
@@ -66,6 +77,13 @@
 			and bathrooms, new flooring throughout, and an updated screened-in
 			back porch to host your Aggie tailgate or cook out. This is the
 			perfect house for the student, young family or older couple.
+		</div>
+		<hr>
+		<h3><i>$131,500</i></h3>
+
+		<div>
+			To schedule an appointment or for any inquiries, contact <a
+				href="mailto:info@4421kirkwood.com">info@4421kirkwood.com</a>
 		</div>
 
 
@@ -97,11 +115,12 @@
 <h3>Upgrades</h3>
 	<div>
 		<ul>
-		<li>Roof new 2006</li>
-		<li>Water heater new 2010</li>
-		<li>Kitchen remodel 2011</li>
-		<li>Floor Tile new 2012</li>
-		<li>Carpet 2014</li>
+		<li>2003 - New Air Conditioner</li>
+		<li>2006 - New Roof</li>
+		<li>2010 - New Water heater</li>
+		<li>2011 - Kitchen overhaul</li>
+		<li>2012 - New ceramic flooring</li>
+		<li>2014 - New carpet</li>
 		</ul>
 	</div>
 </div>
@@ -111,6 +130,7 @@
 			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3431.996750663162!2d-96.305993!3d30.66222!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864686a34e207739%3A0x33eb8e4a14892a50!2s4421+Kirkwood+Dr%2C+Bryan%2C+TX+77802!5e0!3m2!1sen!2sus!4v1406569894298" width="600" height="450" frameborder="0" style="border:0"></iframe>
 	</div>
 
+	<a href="http://www.zillow.com/homedetails/4421-Kirkwood-Dr-Bryan-TX-77802/50306884_zpid/">Zillow</a> has more information about the property and neighborhood.
 
 </section>
 
