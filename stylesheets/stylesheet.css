@@ -312,6 +312,41 @@ footer a:hover {
   color: #444;
 }
 
+.ui-accordion .ui-accordion-icons {
+	padding-left: 1em;
+}
+
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	background-image: url("../images/ui-icons_222222_256x240.png");
+}
+
+.ui-icon-triangle-1-e {
+	background-position: -32px -16px;
+}
+
+.ui-icon-triangle-1-s {
+	background-position: -64px -16px;
+}
+
+.ui-accordion-header
+{
+	position: relative;
+}
+
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon
+{
+	position: absolute;
+	left: 0em;
+	top: 50%;
+	margin-top: -8px;
+}
+
 /* MISC */
 .clearfix:after {
   clear: both;
