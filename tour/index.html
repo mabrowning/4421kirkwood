@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Virtual Tour for 4421 Kirkwood Drive">
+        <meta name="viewport" content="width=device-width">
+        
+        <title>4421 Kirkwood Drive - Virtual Tour</title>
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="js/jquery.transit.js"></script>
+        <script src="js/jquery.leanorama.js"></script>
+        <script src="js/jquery.leanorama.hotspot.js"></script>
+        <script src="js/jquery.leanorama.controlbar.js"></script>
+        <script src="js/jquery.leanorama.infobox.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/leanorama.css">
+        <link rel="stylesheet" href="css/leanorama.hotspot.css">
+        <link rel="stylesheet" href="css/leanorama.controlbar.css">
+        <link rel="stylesheet" href="css/leanorama.infobox.css">
+    </head>
+    <body>
+        <div id="pano-outer">
+            <div id="pano"></div>
+        </div>
+
+		<script>
+
+			var tour = {
+				kitchen: {
+					sides : [
+						'kitchen/0.jpg',
+						'kitchen/1.jpg',
+						'kitchen/2.jpg',
+						'kitchen/3.jpg',
+						'kitchen/4.jpg',
+						'kitchen/5.jpg'
+					],
+					lon: 210,
+					hotspots : [
+						{
+							type: 'nav',
+							id: 'id-kichen-porch',
+							face: 2,
+							x: 200,
+							y: 500,
+							name: "Outside",
+							value: "porch"
+						},
+						{
+							type: 'nav',
+							id: 'id-kichen-living',
+							face: 1,
+							x: 550,
+							y: 500,
+							name: "Living Room",
+							value: "living"
+						},
+						{
+							type: 'nav',
+							id: 'id-kichen-master',
+							face: 2,
+							x: 200,
+							y: 600,
+							name: "Master Bedroom",
+							value: "master"
+						}
+					],
+					infobox: "Kitchen and Dining Room"
+				},
+				living: {
+					sides : [
+						'living/0.jpg',
+						'living/1.jpg',
+						'living/2.jpg',
+						'living/3.jpg',
+						'living/4.jpg',
+						'living/5.jpg'
+					],
+					lon: 30,
+					hotspots :
+					[
+						{
+							type: 'nav',
+							id: 'id-living-kitchen',
+							face: 3,
+							x: 800,
+							y: 500,
+							name: "Dining Room",
+							value: "kitchen"
+						}
+					],
+					infobox: "Living Room"
+				},
+				master: {
+					sides : [
+						'master/0.jpg',
+						'master/1.jpg',
+						'master/2.jpg',
+						'master/3.jpg',
+						'master/4.jpg',
+						'master/5.jpg'
+					],
+					lon: 90,
+					hotspots :
+					[
+						{
+							type: 'nav',
+							id: 'id-master-kitchen',
+							face: 3,
+							x: 1024,
+							y: 500,
+							name: "Dining Room",
+							value: "kitchen"
+						},
+						{
+							type: 'nav',
+							id: 'id-master-porch',
+							face: 0,
+							x: 800,
+							y: 500,
+							name: "Outside",
+							value: "porch"
+						}
+					],
+					infobox: "Master Bedroom"
+				},
+				porch: {
+					sides : [
+						'porch/0.jpg',
+						'porch/1.jpg',
+						'porch/2.jpg',
+						'porch/3.jpg',
+						'porch/4.jpg',
+						'porch/5.jpg'
+					],
+					lon: 90,
+					hotspots : [
+						{
+							type: 'nav',
+							id: 'id-porch-kitchen',
+							face: 0,
+							x: 450,
+							y: 450,
+							name: "Kitchen",
+							value: "kitchen"
+						},
+						{
+							type: 'nav',
+							id: 'id-porch-living',
+							face: 0,
+							x: 450,
+							y: 500,
+							name: "Living Room",
+							value: "living"
+						},
+						{
+							type: 'nav',
+							id: 'id-porch-master',
+							face: 3,
+							x: 950,
+							y: 512,
+							name: "Master Bedroom",
+							value: "master"
+						}
+					],
+					infobox: "Screen Porch"
+				}
+			}
+
+			var pano = $('#pano').leanorama( tour.kitchen );
+
+			// Change location when navigational hotspots are clicked
+			pano.on('leanoramaHotspotClick', function(e, hotspot) {
+				if (hotspot.type == 'nav') 
+					$(this).trigger('leanoramaRefresh', tour[hotspot.value]);
+			});
+		</script>
+    </body>
+</html>
